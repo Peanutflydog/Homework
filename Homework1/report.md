@@ -15,3 +15,31 @@ Ackermann's funtion本身有巢狀遞迴
 $A(m−1,A(m,n−1))$  
 使用堆疊呼叫函式，利用LIFO特性，保存還未計算的m  
 ## 2. 程式實作
+**1.
+```cpp
+#include <iostream>
+using namespace std;
+
+int Ackermann(int m, int n)
+{
+    if (m == 0) {
+        return n + 1;
+    }
+    else if (n == 0) {
+        return Ackermann(m - 1, 1);
+    }
+    else {
+        return Ackermann(m - 1, Ackermann(m, n - 1));
+    }
+}
+
+int main()
+{
+    int m, n;
+
+    cin >> m >> n;
+    cout << Ackermann(m, n) << endl;
+
+    return 0;
+}
+```
