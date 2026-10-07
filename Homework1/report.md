@@ -144,7 +144,13 @@ $T(m,n)$ =
 
 **(2)非遞迴演算法**  
   <img width="643" height="252" alt="image" src="https://github.com/user-attachments/assets/5cf265b7-6915-4a74-b028-41478bd0d62a" />  
-  <img width="458" height="94" alt="image" src="https://github.com/user-attachments/assets/63643e7d-9e6f-4baf-acff-357c3517f18e" />
+  <img width="458" height="94" alt="image" src="https://github.com/user-attachments/assets/63643e7d-9e6f-4baf-acff-357c3517f18e" />  
+
+## 5. 申論及開發報告  
+主要使用遞迴的方式實作 Ackermann's funtion  
+由於 Ackermann's funtion本身就是透過遞迴定義，因此遞迴函式可以直接依照數學定義進行轉換，Ackermann's funtion具有非常快速的成長速度，當輸入值稍微增加時，就可能產生大量的遞迴呼叫
+因此如果輸入值過大，可能造成執行時間過長或堆疊溢位
+另外使用堆疊建立非遞迴演算法，透過堆疊的 LIFO 特性，可以模擬原本函式遞迴的執行順序
 
 ## 3. 效能分析  
   **(1)**  
