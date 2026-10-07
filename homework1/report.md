@@ -1,6 +1,6 @@
 # 41143142
-# Problem1  
-## 1. 解題說明  
+### Problem1  
+## 解題說明  
 Ackermann's funtion $A(m,n)$ 定義如下：  
 <img width="636" height="132" alt="image" src="https://github.com/user-attachments/assets/0b1e7100-7286-481c-9ef3-5c1284d3f223" />  
 Ackermann 函數是一個成長速度非常快的遞迴函數，即使輸入值不大，也會產生非常大量的函式呼叫。  
@@ -15,7 +15,7 @@ Ackermann 函數是一個成長速度非常快的遞迴函數，即使輸入值�
 Ackermann's funtion本身有巢狀遞迴  
 $A(m−1,A(m,n−1))$  
 使用堆疊呼叫函式，利用LIFO特性，保存還未計算的m  
-## 2. 程式實作  
+## 程式實作  
 **(1)**    
 ```cpp
 #include <iostream>
@@ -121,7 +121,7 @@ int main()
     return 0;
 }
 ```
-## 3. 效能分析  
+## 效能分析  
 **(1)遞迴函式**
 Ackermann's funtion成長速度非常快，因此其時間複雜度也會快速增加  
 $T(m,n)$ =  
@@ -138,7 +138,7 @@ $T(m,n)$ =
 時間複雜度 與 **遞迴函式** 同等級  
 空間複雜度 與堆疊最大大小有關
 
-## 4. 測試與驗證  
+## 測試與驗證  
 **(1)遞迴函式**  
   <img width="1101" height="333" alt="image" src="https://github.com/user-attachments/assets/b6a7a105-21a8-4612-8e1b-436ed0cf26c8" />  
   <img width="743" height="211" alt="image" src="https://github.com/user-attachments/assets/a4be7c0f-7258-4842-bff1-5fc22fce1c0a" />  
@@ -147,14 +147,14 @@ $T(m,n)$ =
   <img width="643" height="252" alt="image" src="https://github.com/user-attachments/assets/5cf265b7-6915-4a74-b028-41478bd0d62a" />  
   <img width="458" height="94" alt="image" src="https://github.com/user-attachments/assets/63643e7d-9e6f-4baf-acff-357c3517f18e" />  
 
-## 5. 申論及開發報告  
+## 申論及開發報告  
 主要使用遞迴的方式實作 Ackermann's funtion  
 由於 Ackermann's funtion本身就是透過遞迴定義，因此遞迴函式可以直接依照數學定義進行轉換，Ackermann's funtion具有非常快速的成長速度，當輸入值稍微增加時，就可能產生大量的遞迴呼叫
 因此如果輸入值過大，可能造成執行時間過長或堆疊溢位
 另外使用堆疊建立非遞迴演算法，透過堆疊的 LIFO 特性，可以模擬原本函式遞迴的執行順序
 
-# Problem2  
-## 1. 解題說明  
+### Problem2  
+## 解題說明  
   如果 $S$ 是一個包含 $n$ 個元素的集合，則 $S$ 的冪集是由 $S$ 所有可能的子集合所組成的集合  
   $S$ = {a,b,c}  
   則 $P(S)$ = {∅,{a},{b},{c},{a,b},{a,c},{b,c},{a,b,c}}  
@@ -167,7 +167,7 @@ $T(m,n)$ =
   接著將 $c$ 分別加入上述每一個子集合 {{c},{a,c},{b,c},{a,b,c}}  
   最後將兩部分合併 P({a,b,c}) = {​∅,{a},{b},{a,b},{c},{a,c},{b,c},{a,b,c}}  ​
 
-## 2. 程式實作  
+## 程式實作  
   ```cpp
   #include <iostream>
 
@@ -211,7 +211,7 @@ int main()
     return 0;
 }
   ```
-## 3. 效能分析    
+## 效能分析    
   一個 n 個元素的集合有 $2^n$ 個子集合  
   每次建立新的 subset 時，還需要複製原本的元素，因此最壞情況下需要額外的 $O(n)$  
   時間複雜度為 $O(n2^n)$  
@@ -220,11 +220,11 @@ int main()
   遞迴本身會產生最多 $O(n)$ 的呼叫堆疊  
   空間複雜度為 $O(n2^n)$  
 
-## 4. 測試與驗證  
+## 測試與驗證  
 <img width="436" height="235" alt="image" src="https://github.com/user-attachments/assets/4c8d7e8f-e98a-4670-aae8-e261467e7cc4" />  
 <img width="437" height="384" alt="image" src="https://github.com/user-attachments/assets/6ab3fb49-bc65-42a8-89de-34f6ccbc0928" />  
 
-## 5. 申論及開發報告  
+## 申論及開發報告  
 使用遞迴方式產生集合的冪集  
 先計算不包含目前元素的冪集，再將目前元素加入原本產生的每一個子集合，最後將兩個結果合併  
 例如對集合 {1,2,3}  
