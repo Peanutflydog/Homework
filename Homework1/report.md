@@ -120,19 +120,32 @@ int main()
     return 0;
 }
 ```
-## 3. 效能分析
-**(1)**
+## 3. 效能分析  
+**(1)遞迴函式**
 Ackermann's funtion成長速度非常快，因此其時間複雜度也會快速增加  
 $T(m,n)$ =  
             $O(1)$  
             $T(m-1, 1)$ + $O(1)$  
             $T(m, n-1)$ + $T(m-1, A(m, n-1))$ +$O(1)$  
-計算時間無法簡單表示成一般的函式
-時間複雜度 非常快速成長
+計算時間無法簡單表示成一般的函式  
+時間複雜度 非常快速成長  
 
-當m,n增加，遞迴深度也會快速增加
-空間複雜度 最大遞迴深度
-            
+當m,n增加，遞迴深度也會快速增加  
+空間複雜度 最大遞迴深度  
+
+**(2)非遞迴演算法**
+時間複雜度 與 **遞迴函式** 同等級  
+空間複雜度 與堆疊最大大小有關
+
+## 4. 測試與驗證  
+**(1)遞迴函式**  
+  <img width="1101" height="333" alt="image" src="https://github.com/user-attachments/assets/b6a7a105-21a8-4612-8e1b-436ed0cf26c8" />  
+  <img width="743" height="211" alt="image" src="https://github.com/user-attachments/assets/a4be7c0f-7258-4842-bff1-5fc22fce1c0a" />  
+
+**(2)非遞迴演算法**  
+  <img width="643" height="252" alt="image" src="https://github.com/user-attachments/assets/5cf265b7-6915-4a74-b028-41478bd0d62a" />  
+  <img width="458" height="94" alt="image" src="https://github.com/user-attachments/assets/63643e7d-9e6f-4baf-acff-357c3517f18e" />
+
 ## 3. 效能分析  
   **(1)**  
   一個 n 個元素的集合有 $2^n$ 個子集合  
