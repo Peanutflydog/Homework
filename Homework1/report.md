@@ -162,10 +162,54 @@ $T(m,n)$ =
   使用 遞迴 產生所有子集合  
   假設目前集合為 $S$ = {a,b,c}  
   取出最後一個元素 $c$ 計算 $P({a,b})$  
-  得到 {∅,{a},{b},{a,b}}
-  接著將 $c$ 分別加入上述每一個子集合 {{c},{a,c},{b,c},{a,b,c}}
-  最後將兩部分合併 $P({a,b,c})$ = {​∅,{a},{b},{a,b},{c},{a,c},{b,c},{a,b,c}}​
-  
+  得到 {∅,{a},{b},{a,b}}  
+  接著將 $c$ 分別加入上述每一個子集合 {{c},{a,c},{b,c},{a,b,c}}  
+  最後將兩部分合併 P({a,b,c}) = {​∅,{a},{b},{a,b},{c},{a,c},{b,c},{a,b,c}}  ​
+
+## 2. 程式實作
+  ```cpp
+  #include <iostream>
+
+using namespace std;
+
+void PowerSet(int* S, int n, int index, int* current, int currentSize)
+{
+    if (index == n){
+
+        cout << "{ ";
+        for (int i = 0; i < currentSize; i++)
+            cout << current[i] << " ";
+        cout << "}" << endl;
+
+        return;
+    }
+
+    PowerSet(S, n, index + 1, current, currentSize);
+
+    current[currentSize] = S[index];
+
+    PowerSet(S, n, index + 1, current, currentSize + 1);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int* S = new int[n];
+    int* current = new int[n];
+
+    for (int i = 0; i < n; i++)
+        cin >> S[i];
+
+    PowerSet(S, n, 0, current, 0);
+
+    delete[] S;
+    delete[] current;
+
+    return 0;
+}
+  ```
 ## 3. 效能分析  
   **(1)**  
   一個 n 個元素的集合有 $2^n$ 個子集合  
