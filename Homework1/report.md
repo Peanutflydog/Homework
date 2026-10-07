@@ -14,8 +14,8 @@ Ackermann 函數是一個成長速度非常快的遞迴函數，即使輸入值�
 Ackermann's funtion本身有巢狀遞迴  
 $A(m−1,A(m,n−1))$  
 使用堆疊呼叫函式，利用LIFO特性，保存還未計算的m  
-## 2. 程式實作
-** (1)  
+## 2. 程式實作  
+** (1) **    
 ```cpp
 #include <iostream>
 using namespace std;
