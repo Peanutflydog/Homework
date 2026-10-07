@@ -1,5 +1,4 @@
-# 41143142
-# Problem1
+# Problem1  
 ## 1. 解題說明  
 Ackermann's funtion $A(m,n)$ 定義如下：  
 <img width="636" height="132" alt="image" src="https://github.com/user-attachments/assets/0b1e7100-7286-481c-9ef3-5c1284d3f223" />  
@@ -167,7 +166,7 @@ $T(m,n)$ =
   接著將 $c$ 分別加入上述每一個子集合 {{c},{a,c},{b,c},{a,b,c}}  
   最後將兩部分合併 P({a,b,c}) = {​∅,{a},{b},{a,b},{c},{a,c},{b,c},{a,b,c}}  ​
 
-## 2. 程式實作
+## 2. 程式實作  
   ```cpp
   #include <iostream>
 
@@ -211,7 +210,7 @@ int main()
     return 0;
 }
   ```
-## 3. 效能分析  
+## 3. 效能分析    
   一個 n 個元素的集合有 $2^n$ 個子集合  
   每次建立新的 subset 時，還需要複製原本的元素，因此最壞情況下需要額外的 $O(n)$  
   時間複雜度為 $O(n2^n)$  
@@ -224,7 +223,7 @@ int main()
 <img width="436" height="235" alt="image" src="https://github.com/user-attachments/assets/4c8d7e8f-e98a-4670-aae8-e261467e7cc4" />  
 <img width="437" height="384" alt="image" src="https://github.com/user-attachments/assets/6ab3fb49-bc65-42a8-89de-34f6ccbc0928" />  
 
-## 5.申論及開發報告
+## 5. 申論及開發報告  
 使用遞迴方式產生集合的冪集  
 先計算不包含目前元素的冪集，再將目前元素加入原本產生的每一個子集合，最後將兩個結果合併  
 例如對集合 {1,2,3}  
