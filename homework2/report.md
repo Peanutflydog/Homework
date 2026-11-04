@@ -6,8 +6,8 @@
 <img width="517" height="368" alt="image" src="https://github.com/user-attachments/assets/1e4d7215-16fd-4bfa-be25-6d00f3fe781b" />
 
 
-使用圖1和圖2的私有資料，實作一個多項式抽象資料型態（ADT）Polynomial 類別
-
+使用圖1和圖2的私有資料，實作一個多項式抽象資料型態（ADT）Polynomial 類別  
+建構子 $Polynomial()$：將 terms 初始化為 0
 
 ## 程式實作     
 
