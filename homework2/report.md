@@ -7,7 +7,9 @@
 
 
 使用圖1和圖2的私有資料，實作一個多項式抽象資料型態（ADT）Polynomial 類別  
-建構子 $Polynomial()$：將 terms 初始化為 0
+建構子 $Polynomial()$：將 terms 初始化為 0，capacity 初始化為基本大小 10，並動態配置 termArray，此時代表多項式 p(x) = 0  
+多項式加法 $Add$：利用雙指標兩個多項式的 termArray
+
 
 ## 程式實作     
 
